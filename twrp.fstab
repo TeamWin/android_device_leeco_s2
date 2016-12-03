@@ -3,13 +3,12 @@
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 
 #mount point   fstype                    device                                 device2                              flags
-/boot           emmc        /dev/block/bootdevice/by-name/boot              
-/cache          ext4        /dev/block/bootdevice/by-name/cache             
+/boot           emmc        /dev/block/bootdevice/by-name/boot                                          flags=display="Boot";backup=1;wipeingui             
+/cache          ext4        /dev/block/bootdevice/by-name/cache                                         flags=display="Cache";backup=1;wipeingui             
 /data           ext4        /dev/block/bootdevice/by-name/userdata                                   	flags=encryptable=footer;length=-16384 
-/system         ext4        /dev/block/bootdevice/by-name/system            
 /recovery       emmc        /dev/block/bootdevice/by-name/recovery                                   	flags=display="Recovery";backup=1
-/system_image   emmc        /dev/block/bootdevice/by-name/system
-/system         ext4        /dev/block/bootdevice/by-name/system
+/system_image   emmc        /dev/block/bootdevice/by-name/system                                        flags=backup=1;wipeingui
+/system         ext4        /dev/block/bootdevice/by-name/system                                        flags=display="System";backup=1;wipeingui
 /persist        ext4        /dev/block/bootdevice/by-name/persist         				flags=display="Persist";backup=1
 /adspso         emmc        /dev/block/bootdevice/by-name/dsp             				flags=backup=1;display="firmware"
 /cmnlib         emmc        /dev/block/bootdevice/by-name/cmnlib          				flags=backup=1;subpartitionof=/adspso
