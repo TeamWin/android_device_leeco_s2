@@ -13,6 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+# OTA Assert
+TARGET_OTA_ASSERT_DEVICE := s2,le_s2_ww
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8952
