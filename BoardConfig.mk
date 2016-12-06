@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 # OTA Assert
-TARGET_OTA_ASSERT_DEVICE := s2,le_s2_ww
+TARGET_OTA_ASSERT_DEVICE := s2
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8952
@@ -74,3 +74,4 @@ TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_EXTRA_LANGUAGES := true
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_NTFS_3G := true
+TW_INPUT_BLACKLIST := "hbtp_vm"
