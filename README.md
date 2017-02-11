@@ -24,7 +24,7 @@ Release Date | June 2016
 
 To initialize your local repository using the Omnirom trees to build TWRP, use a command like this:
 
-        $ repo init -u git://github.com/omnirom/android.git -b android-6.0
+        $ repo init -u git://github.com/omnirom/android.git -b android-7.1
 
 Then to sync up:
 
