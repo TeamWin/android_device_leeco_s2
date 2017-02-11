@@ -22,7 +22,7 @@ Release Date | June 2016
 
 ![LeEco Le 2](http://in.img3.lemall.com/file/20160606/default/3370481864506311 "LeEco Le 2")
 
-To initialize your local repository using the OMNIROM trees to build TWRP, use a command like this:
+To initialize your local repository using the Omnirom trees to build TWRP, use a command like this:
 
         $ repo init -u git://github.com/omnirom/android.git -b android-6.0
 
@@ -30,14 +30,12 @@ Then to sync up:
 
         $ repo sync
 
-Download s2 TWRP Trees:
-
-        $ git clone https://github.com/TeamWin/android_twrp_leeco_s2.git device/leeco/s2 -b android-6.0
-        
 Full Compilation
-        
+
         $ source build/envsetup.sh
 
         $ lunch omni_s2-userdebug
-        
-        $ make clean && make recoveryimage
+
+        $ make clean
+
+		$ make recoveryimage
