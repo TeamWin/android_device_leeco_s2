@@ -37,8 +37,7 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
-# Encryption
-TARGET_HW_DISK_ENCRYPTION := true
+TARGET_USES_64_BIT_BINDER := true
 
 # Kernel 
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk
@@ -60,14 +59,17 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 57033579520 # (55696871×1024) - 16384
 # Init 
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
+# Full disk encryption
+TARGET_HW_DISK_ENCRYPTION := true
+TARGET_KEYMASTER_WAIT_FOR_QSEE := true
+
 # Recovery
-TARGET_RECOVERY_FSTAB := device/leeco/s2/twrp.fstab
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 RECOVERY_VARIANT := twrp
-BOARD_HAS_NO_REAL_SDCARD := true
 TW_THEME := portrait_hdpi
+BOARD_HAS_NO_REAL_SDCARD := true
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
@@ -76,4 +78,6 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun0/file
 TW_EXTRA_LANGUAGES := true
 TW_INCLUDE_CRYPTO := true
+TARGET_RECOVERY_DEVICE_MODULES := libbinder libgui libui libEGL libGLESv2 libprotobuf-cpp-lite libsync
+TW_RECOVERY_ADDITIONAL_RELINK_FILES := $(OUT)/system/lib64/libbinder.so $(OUT)/system/lib64/libgui.so $(OUT)/system/lib64/libui.so $(OUT)/system/lib64/libEGL.so $(OUT)/system/lib64/libGLESv2.so $(OUT)/system/lib64/libprotobuf-cpp-lite.so $(OUT)/system/lib64/libsync.so
 TW_INCLUDE_NTFS_3G := true
