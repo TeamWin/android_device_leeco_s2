@@ -60,6 +60,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 57033596416
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
 # Full disk encryption
+TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
 TARGET_HW_DISK_ENCRYPTION := true
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
