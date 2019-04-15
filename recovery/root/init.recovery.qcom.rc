@@ -1,6 +1,3 @@
-on early-init
-    mkdir /firmware 0771 system system
-
 on init
     chmod 0660 /dev/qseecom
     chown system drmrpc /dev/qseecom
@@ -8,49 +5,15 @@ on init
     chown system system /dev/ion
 
 on fs
-    wait /dev/block/platform/soc/${ro.boot.bootdevice}
-    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
-    install_keyring
-    mount vfat /dev/block/bootdevice/by-name/modem /firmware ro shortname=lower uid=1000 gid=1000 dmask=227 fmask=337
-    setprop crypto.ready 1
+    wait /dev/block/platform/soc.0/${ro.boot.bootdevice}
+    symlink /dev/block/platform/soc.0/${ro.boot.bootdevice} /dev/block/bootdevice
     
 # separate copy needed to use /sbin/linker64 instead of /system/bin/linker64
 service sbinqseecomd /sbin/qseecomd
-    user root
-    group root
-    disabled
-    seclabel u:r:recovery:s0
-
-service hwservicemanager /sbin/hwservicemanager
-    user root
-    group root
-    disabled
-    onrestart setprop hwservicemanager.ready false
-    seclabel u:r:recovery:s0
-
-service servicemanager /sbin/servicemanager
-    user root
-    group root readproc
-    disabled
-    seclabel u:r:recovery:s0
-
-service keystore_auth /sbin/keystore_auth
     oneshot
-    user system
-    group root
     disabled
-    seclabel u:r:recovery:s0
-
-service keystore /sbin/keystore /data/misc/keystore
-    user root
-    group root drmrpc readproc
-    disabled
-    seclabel u:r:recovery:s0
-
-service gatekeeper-1-0 /sbin/android.hardware.gatekeeper@1.0-service
     user root
     group root
-    disabled
     seclabel u:r:recovery:s0
 
 service keymaster-3-0 /sbin/android.hardware.keymaster@3.0-service
@@ -64,19 +27,8 @@ on boot
     setprop sys.usb.config mtp,adb
     setprop sys.usb.config adb
 
-on property:crypto.ready=0
-    stop sbinqseecomd
-    stop keymaster-3-0
-    stop gatekeeper-1-0
-    stop hwservicemanager
-    stop keystore
-    stop servicemanager
-
-on property:crypto.ready=1
+on property:ro.crypto.state=encrypted
     start sbinqseecomd
 
 on property:sys.listeners.registered=true
-    start hwservicemanager
     start keymaster-3-0
-    start gatekeeper-1-0
-    start servicemanager
