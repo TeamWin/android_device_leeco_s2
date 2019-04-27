@@ -22,11 +22,6 @@ service keymaster-3-0 /sbin/android.hardware.keymaster@3.0-service
     disabled
     seclabel u:r:recovery:s0
 
-on boot
-    # Workaround for adb not coming up
-    setprop sys.usb.config mtp,adb
-    setprop sys.usb.config adb
-
 on property:ro.crypto.state=encrypted
     start sbinqseecomd
 

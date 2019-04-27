@@ -36,7 +36,7 @@ Full Compilation
 
         $ source build/envsetup.sh
 
-        $ lunch omni_s2-userdebug
+        $ lunch omni_s2-eng
 
         $ make clean
 
