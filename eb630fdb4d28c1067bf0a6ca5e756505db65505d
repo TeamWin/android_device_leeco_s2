@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "39449b6f_ceadfbab",
+        "filename": "recovery/root/init.recovery.qcom.rc",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 28
+      },
+      "writtenOn": "2019-10-17T05:38:12Z",
+      "side": 1,
+      "message": "Pls remove spaces here",
+      "revId": "eb630fdb4d28c1067bf0a6ca5e756505db65505d",
+      "serverId": "9c1c7d72-6534-4d44-b0ea-39f63e804833",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b6d354a6_03b2c4e8",
+        "filename": "recovery/root/vendor/compatibility_matrix.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 28
+      },
+      "writtenOn": "2019-10-17T05:38:12Z",
+      "side": 1,
+      "message": "You can remove this auto-generated header if you want",
+      "revId": "eb630fdb4d28c1067bf0a6ca5e756505db65505d",
+      "serverId": "9c1c7d72-6534-4d44-b0ea-39f63e804833",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a3a48cca_9c5a1b8b",
+        "filename": "recovery/root/vendor/manifest.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 28
+      },
+      "writtenOn": "2019-10-17T05:38:12Z",
+      "side": 1,
+      "message": "You can remove this auto-generated header if you want",
+      "revId": "eb630fdb4d28c1067bf0a6ca5e756505db65505d",
+      "serverId": "9c1c7d72-6534-4d44-b0ea-39f63e804833",
+      "unresolved": true
+    }
+  ]
+}
