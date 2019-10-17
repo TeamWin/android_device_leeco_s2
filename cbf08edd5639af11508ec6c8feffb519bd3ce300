@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0bf98126_096afa6d",
+        "filename": "BoardConfig.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 28
+      },
+      "writtenOn": "2019-10-17T05:42:13Z",
+      "side": 1,
+      "message": "This should be moved to your cleanup commit or a separate commit as it isn\u0027t part of the commit title",
+      "revId": "cbf08edd5639af11508ec6c8feffb519bd3ce300",
+      "serverId": "9c1c7d72-6534-4d44-b0ea-39f63e804833",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "37e471fe_3223da16",
+        "filename": "recovery/root/init.recovery.qcom.rc",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 28
+      },
+      "writtenOn": "2019-10-17T05:42:13Z",
+      "side": 1,
+      "message": "Please remove unneeded spaces",
+      "revId": "cbf08edd5639af11508ec6c8feffb519bd3ce300",
+      "serverId": "9c1c7d72-6534-4d44-b0ea-39f63e804833",
+      "unresolved": true
+    }
+  ]
+}
